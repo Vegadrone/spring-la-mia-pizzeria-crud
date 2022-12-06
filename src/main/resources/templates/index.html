@@ -18,8 +18,9 @@
         <span>Nome: </span>[[*{nome}]] <br>
         <span>Descrizione: </span>[[*{descrizione}]] <br>
         <span>Prezzo: </span>[[*{prezzo}]] <span> €</span> <br>
-        <a th:href="@{/pizza/edit/{id}(id=${pizza.id})}">UPDATE</a> - <a href="@{/pizza/delete/{id}(id=${pizza.id})}">DELETE</a>
+        <a th:href="@{/pizza/edit/{id}(id=${pizza.id})}">UPDATE</a> - <a th:href="@{/pizza/delete/{id}(id=${pizza.id})}">DELETE</a>
         </li>
     </ul>
+    <h1 th:if="${pizze.isEmpty()}">Niente pizze qui</h1>
 </body>
 </html>

@@ -27,7 +27,7 @@ public class Pizza {
 	@Lob
 	private String descrizione;
 	
-	@NotNull(message = "devi inserire un prezzo")
+	
 	@Min(value = 0)
 	private int prezzo;
 	

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La mia pizzeria</title>
+</head>
+<body>
+    <h1>Le Pizze</h1>
+    <a href="/pizza/create">Crea la tua pizza</a>
+
+    <ul>
+        <li 
+            th:each="pizza :${pizze}"
+            th:object="${pizza}"
+        >
+        <span>Nome: </span>[[*{nome}]] <br>
+        <span>Descrizione: </span>[[*{descrizione}]] <br>
+        <span>Prezzo: </span>[[*{prezzo}]] <span> €</span> <br>
+        <a th:href="@{/pizza/edit/{id}(id=${pizza.id})}">UPDATE</a> - <a href="@{/pizza/delete/{id}(id=${pizza.id})}">DELETE</a>
+        </li>
+    </ul>
+</body>
+</html>

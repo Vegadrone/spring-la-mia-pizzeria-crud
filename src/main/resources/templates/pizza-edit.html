@@ -7,8 +7,23 @@
     <title>Modifica la tua pizza</title>
 </head>
 <body>
-    <h1>Modifica la tua pizza</h1>
-
+	
+	<h1>Modifica la tua pizza</h1>
+	
+	<div
+		th:if="${errors}"
+	>
+		ERROR:<br>
+		<ul>
+			<li
+				th:each="error : ${errors}"
+				th:object="${error}"
+			>
+				[[*{defaultMessage}]]
+			</li>
+		</ul>
+	</div>
+	
     <form 
 		method="POST" 
 		action="/pizza/edit"

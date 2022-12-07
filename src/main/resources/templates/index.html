@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La mia pizzeria</title>
+    <title>Pizza and Drinks</title>
 </head>
 <body>
-    <h1>Le Pizze</h1>
-    <a href="/pizza/create">Crea la tua pizza</a>
-    <a href="/drinks">Vai ai Drink</a>
+     <a href="/pizza/create">Crea la tua pizza</a>
+     <div
+		th:if="${errors}"
+	>
+		ERROR:<br>
+		<ul>
+			<li
+				th:each="error : ${errors}"
+				th:object="${error}"
+			>
+				[[*{defaultMessage}]]
+			</li>
+		</ul>
+	</div>
 
     <ul>
         <li 
@@ -23,5 +34,6 @@
         </li>
     </ul>
     <h1 th:if="${pizze.isEmpty()}">Niente pizze qui</h1>
+
 </body>
 </html>

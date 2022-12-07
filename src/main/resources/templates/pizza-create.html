@@ -8,6 +8,20 @@
 </head>
 <body>
     <h1>Crea la tua pizza</h1>
+	<div
+		th:if="${errors}"
+	>
+		ERROR:<br>
+		<ul>
+			<li
+				th:each="error : ${errors}"
+				th:object="${error}"
+			>
+				[[*{defaultMessage}]]
+			</li>
+		</ul>
+	</div>
+
 
     <form 
 		method="POST" 
